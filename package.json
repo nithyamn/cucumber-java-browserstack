@@ -1,0 +1,23 @@
+{
+  "name": "cucumber-java-browserstack",
+  "version": "1.0.0",
+  "description": "![BrowserStack Logo](https://d98b8t1nnulk5.cloudfront.net/production/images/layout/logo-header.png?1469004780)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nithyamn/cucumber-java-browserstack.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nithyamn/cucumber-java-browserstack/issues"
+  },
+  "homepage": "https://github.com/nithyamn/cucumber-java-browserstack#readme",
+  "devDependencies": {
+    "@percy/cli": "^1.18.0"
+  }
+}

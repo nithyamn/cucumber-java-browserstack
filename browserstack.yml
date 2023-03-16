@@ -16,9 +16,9 @@ accessKey: YOUR_ACCESS_KEY
 # Ensure you add a dynamic identifier, like an incremental build number from your
 # CI/CD or timestamp at the end of every build; otherwise tests from different
 # executions will be grouped together on BrowserStack
-buildName: browserstack-build-1
+buildName: cucumber-demo
 # Use `projectName` to set the name of your project. Example, Marketing Website
-projectName: BrowserStack Samples
+projectName: Observability demo
 
 # Use `framework` to set the framework of your project. Example, testng, cucumber, cucumber-testng
 framework: cucumber-testng
@@ -40,6 +40,9 @@ platforms:
   - device: Samsung Galaxy S22 Ultra
     browserName: chrome # Try 'samsung' for Samsung browser
     osVersion: 12.0
+  - device: iPhone 14
+    browserName: safari # Try 'samsung' for Samsung browser
+    osVersion: 16
 
 # =======================
 # Parallels per Platform
@@ -51,14 +54,14 @@ platforms:
 #
 # Example 2 - If you have configured 1 platform and set `parallelsPerPlatform` as 5, a total of 5 (1 * 5) parallel threads will be used on BrowserStack
 parallelsPerPlatform: 1
-
+# this determines the number of parallels to be spawned (this x number of platforms specified) -> the no .of test cases would determine on the no.of. scenarios x the platform combination (4 scenarios x 3 platforms = 12 sessions)
 # ==========================================
 # BrowserStack Local
 # (For localhost, staging/private websites)
 # ==========================================
 # Set browserStackLocal to true if your website under test is not accessible publicly over the internet
 # Learn more about how BrowserStack Local works here -> https://www.browserstack.com/docs/automate/selenium/local-testing-introduction
-browserstackLocal: true # <boolean> (Default false)
+browserstackLocal: false # <boolean> (Default false)
   # browserStackLocalOptions:
   # Options to be passed to BrowserStack local in-case of advanced configurations
 # - localIdentifier: # <string> (Default: null) Needed if you need to run multiple instances of local.
@@ -68,7 +71,7 @@ browserstackLocal: true # <boolean> (Default false)
 # ===================
 # Debugging features
 # ===================
-debug: false # <boolean> # Set to true if you need screenshots for every selenium command ran
-networkLogs: false # <boolean> Set to true to enable HAR logs capturing
+debug: true # <boolean> # Set to true if you need screenshots for every selenium command ran
+networkLogs: true # <boolean> Set to true to enable HAR logs capturing
 consoleLogs: errors # <string> Remote browser's console debug levels to be printed (Default: errors)
 # Available options are `disable`, `errors`, `warnings`, `info`, `verbose` (Default: errors)

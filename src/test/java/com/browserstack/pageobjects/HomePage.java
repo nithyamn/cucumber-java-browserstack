@@ -1,5 +1,6 @@
 package com.browserstack.pageobjects;
 
+import io.percy.selenium.Percy;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -12,7 +13,7 @@ public class HomePage {
 
     private String selectedProductName;
 
-    public HomePage(WebDriver webDriver) {
+    public HomePage(WebDriver webDriver, Percy percy) {
         this.webDriver = webDriver;
         this.selectedProductName = "";
     }
@@ -27,6 +28,7 @@ public class HomePage {
 
     public void selectFirstProductName() {
         String firstProduct = webDriver.findElement(firstProductName).getText();
+        System.out.println("NAME:"+firstProduct);
         setSelectedProductName(firstProduct);
     }
 
